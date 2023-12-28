@@ -211,9 +211,9 @@ FSSound : FSObj{
 		FSReq.new(Freesound.uri(\TEXT_SEARCH),params).get(action,FSPager);
 	}
 
-	*contentSearch{|target, filter, params, action|
+	*contentSearch{|target, descriptorsFilter, params, action|
 		params = FSSound.initParams(params);
-		params.putAll(('target' : target, 'filter' : filter));
+		params.putAll(('target' : target, 'descriptors_filter' : descriptorsFilter));
 		FSReq.new(Freesound.uri(\CONTENT_SEARCH), params).get(action,FSPager);
 	}
 
